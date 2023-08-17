@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+}
+
+body{
+    font-family: 'Roboto';
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    font-family: 'Roboto';
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 16px;
+} 
+
+.header--img{
+    height: auto;
+    width: 50%;
+}
+
+.header--text{
+    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
+    color: #251D20;
+    line-height: 26px;
+}
+
+.header--email a{
+    color: #251D20;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.header--email a:hover{
+    text-decoration: underline;
+}
+
+.content{
+    margin: 0 auto;
+}
+
+.content--main{
+    display: flex;
+    flex-direction: column;
+    height: 96vh;
+    padding-top: 40px;
+    scroll-snap-align: start;
+}
+
+.content--img{
+    border: 150px;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.content--div--img{
+    height: auto;
+    width: 420px;
+}
+
+.content--text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    color: #251D20;
+}
+
+.issue--name{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 0 18px 0;
+    color: #251D20;
+}
+
+.issue--link{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.issue--link a{
+    text-decoration: none;
+    color: white
+}
+
+.issue--link a:hover{
+    text-decoration: underline;
+}
+
+.issue--footer{
+    font-size: 16px;
+    font-weight: 600;
+    color: #251D20;
+    padding: 18px 0;
+}
+
+.issue--footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.issue--footer a:hover{
+    text-decoration: underline;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 16px;
+}
+
+.footer--text{
+    font-weight: 600;
+    color: #251D20;
+    line-height: 26px;
+    max-width: 310px;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.footer--text--small{
+    padding-top: 20px;
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.footer--text--small a{
+    color: #251D20;
+}
+
+.footer--text--small a:hover{
+    text-decoration: underline;
+}
+
+.footer--issues{
+    line-height: 26px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.footer--issues a{
+    text-decoration: none;
+    color: #251D20;
+}
+
+.footer--issues a:hover{
+    text-decoration: underline;
+}
+
+.footer--inv{
+    display: none;
+}
+
+
+@media (max-width: 990px) {
+    html, body{
+        scroll-snap-type: none;
+    }
+
+    .header{
+        position: static;
+    }
+
+    .footer{
+        position: static;
+    }
+
+    .one{
+        scroll-padding: 40px;
+    }
+
+    .footer--issues{
+        display: none;
+    }
+}
+
+@media (max-width: 766px){
+    .footer--text{
+        position: relative;
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 8px;
+    }
+
+    .footer--text--small{
+        padding-top: 10px;
+    }
+
+    .header--text{
+        display: none;
+    }
+
+    .header--img{
+        height: auto;
+        width: 200px;
+    }
+
+    .footer--inv{
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    .footer--email{
+        color: #251D20;
+        text-align: 100%;
+    }
+
+    .footer--email a{
+        text-decoration: none;
+        color: #251D20;
+        font-size: 18px;
+    }
+}

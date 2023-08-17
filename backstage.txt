@@ -1,0 +1,89 @@
+const sections = document.querySelectorAll('.content--main');
+const htmlElement = document.body;
+
+sections.forEach(function(section) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const classSuffix = section.classList[1];
+                let color;
+
+                if (classSuffix == 'one') {
+                    color = '#E30512';
+                } else if (classSuffix == 'two') {
+                    color = '#1939BE';
+                } else if (classSuffix == 'three') {
+                    color = '#FFBE00';
+                } else if (classSuffix == 'four') {
+                    color = '#FA6721';
+                } else if (classSuffix == 'five') {
+                    color = '#00C2B6';
+                } else if (classSuffix == 'six') {
+                    color = '#FFFFFF';
+                } else if (classSuffix == 'seven') {
+                    color = '#FF608C';
+                } else {
+                    color = '#FF608C'; // Default color for additional sections
+                }
+
+                // Update the background color with a smooth transition
+                htmlElement.style.transition = 'background-color 0.5s ease-in-out';
+                htmlElement.style.backgroundColor = color;
+            }
+        }, {threshold: 1});
+    });
+
+    observer.observe(section);
+});
+
+
+
+
+
+
+// window.addEventListener('scroll', function() {
+//     const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+//         const { top, left, bottom, right } = el.getBoundingClientRect();
+//         const { innerHeight, innerWidth } = window;
+//         return partiallyVisible
+//           ? ((top > 0.9 && top < innerHeight) ||
+//               (bottom > 0.9 && bottom < innerHeight)) &&
+//               ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+//           : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+//     };
+    
+//     const sections = document.querySelectorAll('.content--main');
+//     const htmlElement = document.body;
+
+//     sections.forEach((element) => {
+//         const isFullyVisible = elementIsVisibleInViewport(element);
+
+//         if (isFullyVisible) {
+//             htmlElement.style.backgroundColor = getColorForElement(element.id);
+//             htmlElement.style.transition = 'background-color 0.7s ease-in-out';
+//         } 
+
+//         function getColorForElement(elementId) {
+//             switch (elementId) {
+//                 case 'C1':
+//                     return '#E30512';
+//                 case 'C2':
+//                     return '#1939BE';
+//                 case 'C3':
+//                     return '#FFBE00';
+//                 case 'C4':
+//                     return '#FD7230';
+//                 case 'C5':
+//                     return '#00C2B6';
+//                 case 'C6':
+//                     return '#FFFFFF';
+//                 case 'C7':
+//                     return '#FF608C';
+//                 default:
+//                     return '#E30512'; // Default color
+//             }
+//         }
+//     });
+// });
+
+
