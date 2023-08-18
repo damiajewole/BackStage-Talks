@@ -72,7 +72,7 @@ body{
 
 .content--img{
     border: 150px;
-    height: 70vh;
+    height: auto;
     display: flex;
     justify-content: center;
 }
